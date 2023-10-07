@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 200,
+  "experience": 0.6,
+  "group": "fire_brick",
+  "ingredient": {
+    "item": "minecraft:nether_brick"
+  },
+  "result": "enhancedvanillamod:fire_brick"
+}

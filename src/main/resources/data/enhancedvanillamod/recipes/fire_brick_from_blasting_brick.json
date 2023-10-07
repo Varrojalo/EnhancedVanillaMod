@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0.2,
+  "group": "fire_brick",
+  "ingredient": {
+    "item": "minecraft:brick"
+  },
+  "result": "enhancedvanillamod:fire_brick"
+}
