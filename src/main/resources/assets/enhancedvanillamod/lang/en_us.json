@@ -1,3 +1,7 @@
 {
-  "item.enhancedvanillamod.fire_brick": "Fire Brick"
+  "creativetab.enhanced_vanilla_tab": "Enhanced Vanilla Mod Tab",
+
+  "item.enhancedvanillamod.fire_brick": "Fire Brick",
+
+  "block.enhancedvanillamod.clock_block":"Redstone Clock Block"
 }

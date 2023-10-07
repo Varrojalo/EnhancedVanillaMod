@@ -1,6 +1,8 @@
 package com.varrojalo.enhancedvanillamod;
 
 import com.mojang.logging.LogUtils;
+import com.varrojalo.enhancedvanillamod.block.ModBlocks;
+import com.varrojalo.enhancedvanillamod.item.ModCreativeModeTabs;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,8 +30,9 @@ public class EnhancedVanillaMod
     public EnhancedVanillaMod()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
