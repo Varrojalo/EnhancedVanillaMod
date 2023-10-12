@@ -1,6 +1,7 @@
 package com.varrojalo.enhancedvanillamod.block;
 
 import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
+import com.varrojalo.enhancedvanillamod.block.custom.ClockBlock;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -20,8 +21,9 @@ public class ModBlocks {
             DeferredRegister.create(ForgeRegistries.BLOCKS, EnhancedVanillaMod.MOD_ID);
 
     public static final RegistryObject<Block> CLOCK_BLOCK = registerBlock("clock_block",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
-
+            () -> new ClockBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
+    public static final RegistryObject<Block> FILTERED_HOPPER = registerBlock("filtered_hopper",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.HOPPER)));
     public static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> returnedBlock = BLOCKS.register(name, block);
         registerBlockItem(name, returnedBlock);

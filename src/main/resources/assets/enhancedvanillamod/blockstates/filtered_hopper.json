@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "enhancedvanillamod:block/filtered_hopper"
+    },
+    "facing=east": {
+      "model": "enhancedvanillamod:block/filtered_hopper_side",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "enhancedvanillamod:block/filtered_hopper_side"
+    },
+    "facing=south": {
+      "model": "enhancedvanillamod:block/filtered_hopper_side",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "enhancedvanillamod:block/filtered_hopper_side",
+      "y": 270
+    }
+  }
+}

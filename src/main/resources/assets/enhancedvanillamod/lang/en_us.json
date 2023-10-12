@@ -2,6 +2,14 @@
   "creativetab.enhanced_vanilla_tab": "Enhanced Vanilla Mod Tab",
 
   "item.enhancedvanillamod.fire_brick": "Fire Brick",
+  "item.enhancedvanillamod.mesh": "Mesh",
+  "item.enhancedvanillamod.filter": "Filter",
 
-  "block.enhancedvanillamod.clock_block":"Redstone Clock Block"
+
+  "block.enhancedvanillamod.clock_block":"Redstone Clock Block",
+  "block.enhancedvanillamod.filtered_hopper":"Filtered Hopper",
+  "block.enhancedvanillamod.placer":"Block Placer",
+  "block.enhancedvanillamod.breaker":"Block Breaker"
+
+
 }

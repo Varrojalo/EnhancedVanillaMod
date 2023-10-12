@@ -18,8 +18,12 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.FIRE_BRICK.get()))
                     .title(Component.translatable("creativetab.enhanced_vanilla_tab"))
                     .displayItems((pParameters, pOutput) -> {
+
                         pOutput.accept(ModItems.FIRE_BRICK.get());
+                        pOutput.accept(ModItems.MESH.get());
+                        pOutput.accept(ModItems.FILTER.get());
                         pOutput.accept(ModBlocks.CLOCK_BLOCK.get());
+                        pOutput.accept(ModBlocks.FILTERED_HOPPER.get());
                     })
                     .build());
 
