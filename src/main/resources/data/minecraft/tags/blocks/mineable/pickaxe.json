@@ -1,5 +1,6 @@
 {
   "values": [
-    "enhancedvanillamod:clock_block"
+    "enhancedvanillamod:clock_block",
+    "enhancedvanillamod:filtered_hopper"
   ]
 }

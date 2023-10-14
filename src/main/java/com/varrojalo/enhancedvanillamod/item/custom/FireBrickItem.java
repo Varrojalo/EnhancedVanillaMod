@@ -1,5 +1,7 @@
 package com.varrojalo.enhancedvanillamod.item.custom;
 
+import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
+import com.varrojalo.enhancedvanillamod.util.ModTags;
 import net.minecraft.client.gui.screens.recipebook.SmeltingRecipeBookComponent;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -27,7 +29,7 @@ public class FireBrickItem extends Item {
 
             BlockState state = pContext.getLevel().getBlockState(position);
 
-            if (state.is(Blocks.FURNACE) || state.is(Blocks.BLAST_FURNACE) || state.is(Blocks.SMOKER)) {
+            if (state.is(ModTags.Blocks.FIRE_BRICKABLE)) {
                 player.sendSystemMessage(Component.literal("Object Found"));
 
 
