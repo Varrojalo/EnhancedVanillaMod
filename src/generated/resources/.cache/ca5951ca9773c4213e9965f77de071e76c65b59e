@@ -1,0 +1,8 @@
+// 1.20.2	2023-10-15T11:30:55.1044416	Tags for minecraft:block mod id enhancedvanillamod
+406ec23abc48d2750d26097b5d352fc1552a7d14 data/enhancedvanillamod/tags/blocks/fire_brickable.json
+ef04eff5800a12c25dc6d667023bb13768b03ecc data/minecraft/tags/blocks/fences.json
+750fdd33c30345bba64207c0c14cbf0b2d22a825 data/minecraft/tags/blocks/fence_gates.json
+74d658b7ab5b52bd2e496710cd501e3dbfa87541 data/minecraft/tags/blocks/mineable/pickaxe.json
+d89b204beb784603d2dd5491374165177c3a2a07 data/minecraft/tags/blocks/needs_iron_tool.json
+c5b0ab42793496bb4d3e142aa6d4816d1ac6cc2d data/minecraft/tags/blocks/needs_stone_tool.json
+73b2f737fd836723e4fef0810f2375cc01ce0885 data/minecraft/tags/blocks/walls.json

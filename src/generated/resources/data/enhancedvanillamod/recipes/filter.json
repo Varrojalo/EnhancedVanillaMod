@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "minecraft:redstone"
+    },
+    "$": {
+      "item": "minecraft:diamond"
+    },
+    "M": {
+      "item": "enhancedvanillamod:mesh"
+    }
+  },
+  "pattern": [
+    "$#$",
+    "#M#",
+    "$#$"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:filter"
+  },
+  "show_notification": true
+}

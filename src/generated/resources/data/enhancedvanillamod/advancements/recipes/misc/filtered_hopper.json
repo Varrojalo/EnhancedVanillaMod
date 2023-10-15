@@ -1,0 +1,48 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_filter": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "enhancedvanillamod:filter"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_hopper": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:hopper"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "enhancedvanillamod:filtered_hopper"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_filter",
+      "has_hopper"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "enhancedvanillamod:filtered_hopper"
+    ]
+  },
+  "sends_telemetry_event": false
+}

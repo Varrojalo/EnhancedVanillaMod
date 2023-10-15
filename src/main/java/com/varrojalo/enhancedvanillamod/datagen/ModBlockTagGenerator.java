@@ -32,6 +32,67 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_STONE_TOOL).
                 add(ModBlocks.FILTERED_HOPPER.get());
 
+        //<editor-fold desc="White Concrete Fences,Gates & Walls added to Tags">
+        this.tag(BlockTags.FENCES)
+                .add(
+                        ModBlocks.WHITE_CONCRETE_FENCE.get(),
+                        ModBlocks.ORANGE_CONCRETE_FENCE.get(),
+                        ModBlocks.MAGENTA_CONCRETE_FENCE.get(),
+                        ModBlocks.LIGHT_BLUE_CONCRETE_FENCE.get(),
+                        ModBlocks.YELLOW_CONCRETE_FENCE.get(),
+                        ModBlocks.LIME_CONCRETE_FENCE.get(),
+                        ModBlocks.PINK_CONCRETE_FENCE.get(),
+                        ModBlocks.GRAY_CONCRETE_FENCE.get(),
+                        ModBlocks.LIGHT_GRAY_CONCRETE_FENCE.get(),
+                        ModBlocks.CYAN_CONCRETE_FENCE.get(),
+                        ModBlocks.PURPLE_CONCRETE_FENCE.get(),
+                        ModBlocks.BLUE_CONCRETE_FENCE.get(),
+                        ModBlocks.BROWN_CONCRETE_FENCE.get(),
+                        ModBlocks.GREEN_CONCRETE_FENCE.get(),
+                        ModBlocks.RED_CONCRETE_FENCE.get(),
+                        ModBlocks.BLACK_CONCRETE_FENCE.get()
+                );
+        this.tag(BlockTags.FENCE_GATES)
+                .add(
+                        ModBlocks.WHITE_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.ORANGE_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.MAGENTA_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.LIGHT_BLUE_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.YELLOW_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.LIME_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.PINK_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.GRAY_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.LIGHT_GRAY_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.CYAN_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.PURPLE_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.BLUE_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.BROWN_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.GREEN_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.RED_CONCRETE_FENCE_GATE.get(),
+                        ModBlocks.BLACK_CONCRETE_FENCE_GATE.get()
+                );
+        this.tag(BlockTags.WALLS)
+                .add(
+                        ModBlocks.WHITE_CONCRETE_WALL.get(),
+                        ModBlocks.ORANGE_CONCRETE_WALL.get(),
+                        ModBlocks.MAGENTA_CONCRETE_WALL.get(),
+                        ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get(),
+                        ModBlocks.YELLOW_CONCRETE_WALL.get(),
+                        ModBlocks.LIME_CONCRETE_WALL.get(),
+                        ModBlocks.PINK_CONCRETE_WALL.get(),
+                        ModBlocks.GRAY_CONCRETE_WALL.get(),
+                        ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get(),
+                        ModBlocks.CYAN_CONCRETE_WALL.get(),
+                        ModBlocks.PURPLE_CONCRETE_WALL.get(),
+                        ModBlocks.BLUE_CONCRETE_WALL.get(),
+                        ModBlocks.BROWN_CONCRETE_WALL.get(),
+                        ModBlocks.GREEN_CONCRETE_WALL.get(),
+                        ModBlocks.RED_CONCRETE_WALL.get(),
+                        ModBlocks.BLACK_CONCRETE_WALL.get()
+                );
+        //</editor-fold>
+
+
         //this.tag(BlockTags.NEEDS_DIAMOND_TOOL).
         //        add(ModBlocks.FILTERED_HOPPER.get());
         //this.tag(BlockTags.NEEDS_NETHERITE_TOOL).
