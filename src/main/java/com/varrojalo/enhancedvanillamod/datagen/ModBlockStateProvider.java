@@ -6,6 +6,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.client.model.generators.ModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -22,7 +23,9 @@ public class ModBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         blockWithITem(ModBlocks.CLOCK_BLOCK);
-        blockWithITem(ModBlocks.FILTERED_HOPPER);
+        simpleBlockWithItem(ModBlocks.PULVERIZER_BLOCK.get(),
+                new ModelFile.UncheckedModelFile(modLoc("block/pulverizer_block")));
+
 
         //<editor-fold desc="White Concrete Deco Blocks Blockstate Datagen">
         stairsBlock(((StairBlock) ModBlocks.WHITE_CONCRETE_STAIRS.get()),blockTexture(Blocks.WHITE_CONCRETE));

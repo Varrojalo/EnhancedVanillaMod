@@ -2,6 +2,7 @@ package com.varrojalo.enhancedvanillamod.item;
 
 import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
 import com.varrojalo.enhancedvanillamod.item.custom.FireBrickItem;
+import com.varrojalo.enhancedvanillamod.item.custom.TeleporterItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,6 +19,12 @@ public class ModItems {
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> FILTER = ITEMS.register("filter",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ECHO_DUST = ITEMS.register("echo_dust",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> ECHO_INGOT = ITEMS.register("echo_ingot",
+            () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> TELEPORTER = ITEMS.register("teleporter",
+            () -> new TeleporterItem(new Item.Properties().durability(16)));
 
     public static void register(IEventBus eventBus)
     {

@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "E": {
+      "item": "minecraft:ender_pearl"
+    },
+    "I": {
+      "item": "enhancedvanillamod:echo_ingot"
+    }
+  },
+  "pattern": [
+    " I ",
+    "IEI",
+    " I "
+  ],
+  "result": {
+    "item": "enhancedvanillamod:teleporter"
+  },
+  "show_notification": true
+}

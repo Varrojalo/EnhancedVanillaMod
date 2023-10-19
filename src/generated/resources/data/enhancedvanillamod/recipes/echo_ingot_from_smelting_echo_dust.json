@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 1.0,
+  "group": "echo_items",
+  "ingredient": {
+    "item": "enhancedvanillamod:echo_dust"
+  },
+  "result": "enhancedvanillamod:echo_ingot"
+}

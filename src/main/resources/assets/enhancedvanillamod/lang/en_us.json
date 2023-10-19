@@ -1,14 +1,27 @@
 {
-  "creativetab.enhanced_vanilla_tab": "Enhanced Vanilla Mod Tab",
+  "creativetab.enhanced_vanilla_tab": "Enhanced Vanilla Mod",
+  "tooltip.enhancedvanillamod.teleporter_setted.tooltip": "Teleport Position",
+
 
   "item.enhancedvanillamod.fire_brick": "Fire Brick",
   "item.enhancedvanillamod.mesh": "Mesh",
   "item.enhancedvanillamod.filter": "Filter",
+  "item.enhancedvanillamod.teleporter": "Teleporter",
+
+
+  "item.enhancedvanillamod.echo_dust": "Echo Dust",
+  "item.enhancedvanillamod.echo_ingot": "Echo Ingot",
+
 
   "block.enhancedvanillamod.clock_block":"Redstone Clock Block",
   "block.enhancedvanillamod.filtered_hopper":"Filtered Hopper",
+  "block.enhancedvanillamod.pulverizer_block":"Pulverizer",
   "block.enhancedvanillamod.placer":"Block Placer",
   "block.enhancedvanillamod.breaker":"Block Breaker",
+  "block.enhancedvanillamod.teleport_anchor_block":"Teleport Anchor",
+  "block.enhancedvanillamod.echo_block":"Echo Block",
+
+
 
   "block.enhancedvanillamod.white_concrete_stairs":"White Concrete Stairs",
   "block.enhancedvanillamod.white_concrete_slab":"White Concrete Slab",

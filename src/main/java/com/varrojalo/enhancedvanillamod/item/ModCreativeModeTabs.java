@@ -20,11 +20,17 @@ public class ModCreativeModeTabs {
                     .displayItems((pParameters, pOutput) -> {
 
                         pOutput.accept(ModItems.FIRE_BRICK.get());
+                        pOutput.accept(ModItems.ECHO_DUST.get());
+                        pOutput.accept(ModItems.ECHO_INGOT.get());
+                        pOutput.accept(ModItems.TELEPORTER.get());
                         pOutput.accept(ModItems.MESH.get());
                         pOutput.accept(ModItems.FILTER.get());
+
                         pOutput.accept(ModBlocks.CLOCK_BLOCK.get());
                         pOutput.accept(ModBlocks.FILTERED_HOPPER.get());
+                        pOutput.accept(ModBlocks.PULVERIZER_BLOCK.get());
 
+                        //<editor-fold desc="Concrete Deco Blocks">
                         pOutput.accept(ModBlocks.WHITE_CONCRETE_STAIRS.get());
                         pOutput.accept(ModBlocks.WHITE_CONCRETE_SLAB.get());
                         pOutput.accept(ModBlocks.WHITE_CONCRETE_BUTTON.get());
@@ -184,7 +190,7 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.BLACK_CONCRETE_WALL.get());
                         pOutput.accept(ModBlocks.BLACK_CONCRETE_DOOR.get());
                         pOutput.accept(ModBlocks.BLACK_CONCRETE_TRAPDOOR.get());
-
+                        //</editor-fold>
                     })
                     .build());
 

@@ -2,8 +2,12 @@ package com.varrojalo.enhancedvanillamod;
 
 import com.mojang.logging.LogUtils;
 import com.varrojalo.enhancedvanillamod.block.ModBlocks;
+import com.varrojalo.enhancedvanillamod.block.entity.ModBlocksEntities;
 import com.varrojalo.enhancedvanillamod.item.ModCreativeModeTabs;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
+import com.varrojalo.enhancedvanillamod.screen.ModMenuTypes;
+import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockScreen;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -33,6 +37,8 @@ public class EnhancedVanillaMod
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
+        ModBlocksEntities.register(modEventBus);
+        ModMenuTypes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -71,6 +77,8 @@ public class EnhancedVanillaMod
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event)
         {
+
+            MenuScreens.register(ModMenuTypes.PULVERIZER_BLOCK_MENU.get(), PulverizerBlockScreen::new);
         }
     }
 }

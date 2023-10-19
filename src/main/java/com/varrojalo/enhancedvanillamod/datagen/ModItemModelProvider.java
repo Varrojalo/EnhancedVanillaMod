@@ -25,6 +25,11 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.FILTER);
         simpleItem(ModItems.MESH);
         simpleItem(ModItems.FIRE_BRICK);
+        simpleItem(ModItems.ECHO_DUST);
+        simpleItem(ModItems.ECHO_INGOT);
+        simpleItem(ModItems.TELEPORTER);
+
+        simplerBlockItem(ModBlocks.CLOCK_BLOCK);
 
         //<editor-fold desc="White Concrete Door, Fence, Button & Wall items Datagen">
         simpleBlockItem(ModBlocks.WHITE_CONCRETE_DOOR);

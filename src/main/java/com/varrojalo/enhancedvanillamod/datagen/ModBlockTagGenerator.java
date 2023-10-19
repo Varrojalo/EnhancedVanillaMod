@@ -21,8 +21,19 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider pProvider) {
-        this.tag(ModTags.Blocks.FIRE_BRICKABLE).
-                add(Blocks.FURNACE,Blocks.BLAST_FURNACE,Blocks.SMOKER);
+        this.tag(ModTags.Blocks.FIRE_BRICKABLE)
+                .add(Blocks.FURNACE,Blocks.BLAST_FURNACE,Blocks.SMOKER);
+        this.tag(ModTags.Blocks.PULVERIZABLE_BLOCKS)
+                .add(
+                        Blocks.COBBLESTONE,
+                        Blocks.DIRT,
+                        Blocks.BLACKSTONE,
+                        Blocks.GRAVEL,
+                        Blocks.GRANITE,
+                        Blocks.DIORITE,
+                        Blocks.ANDESITE,
+                        Blocks.BONE_BLOCK
+                );
 
         this.tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.CLOCK_BLOCK.get(), ModBlocks.FILTERED_HOPPER.get());
@@ -32,7 +43,7 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_STONE_TOOL).
                 add(ModBlocks.FILTERED_HOPPER.get());
 
-        //<editor-fold desc="White Concrete Fences,Gates & Walls added to Tags">
+        //<editor-fold desc="Concrete Fences,Gates & Walls added to Tags">
         this.tag(BlockTags.FENCES)
                 .add(
                         ModBlocks.WHITE_CONCRETE_FENCE.get(),

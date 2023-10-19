@@ -12,6 +12,8 @@ public class ModTags {
     public static class Blocks
     {
         public static final TagKey<Block> FIRE_BRICKABLE = tag("fire_brickable");
+        public  static final TagKey<Block> PULVERIZABLE_BLOCKS = tag("pulverizable_blocks");
+
         public static TagKey<Block> tag(String name)
         {
             return BlockTags.create(new ResourceLocation(EnhancedVanillaMod.MOD_ID,name));
@@ -19,6 +21,7 @@ public class ModTags {
     }
     public static class Items
     {
+        //public  static final TagKey<Item> PULVERIZABLE_ITEMS = tag("pulverizable_items");
         public static TagKey<Item> tag(String name)
         {
             return ItemTags.create(new ResourceLocation(EnhancedVanillaMod.MOD_ID,name));

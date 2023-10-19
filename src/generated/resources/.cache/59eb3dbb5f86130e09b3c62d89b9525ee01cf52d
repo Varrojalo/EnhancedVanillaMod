@@ -1,4 +1,4 @@
-// 1.20.2	2023-10-15T11:30:55.1014382	Loot Tables
+// 1.20.2	2023-10-16T19:58:38.0796202	Loot Tables
 9c44864181eb7756c200cfc0efb5a9ca54cb272b data/enhancedvanillamod/loot_tables/blocks/black_concrete_button.json
 01785fd5bf9c1b0ecb474de387267c605e987229 data/enhancedvanillamod/loot_tables/blocks/black_concrete_door.json
 80b5ae9ebfb2d1c09d4e5f8213afdfb409b51c18 data/enhancedvanillamod/loot_tables/blocks/black_concrete_fence.json
@@ -109,6 +109,7 @@ babbb3615d7acd5cca3d8b3bb09b23a82a3d53df data/enhancedvanillamod/loot_tables/blo
 1f5e7c7b5e22df77c43e8fcd9b98a34b2a213e09 data/enhancedvanillamod/loot_tables/blocks/pink_concrete_stairs.json
 2172b9d1479a093d6b4e99c00fef5cb944da5c5b data/enhancedvanillamod/loot_tables/blocks/pink_concrete_trapdoor.json
 d9cbdcecff403312f87d9b111883637c15b2dc80 data/enhancedvanillamod/loot_tables/blocks/pink_concrete_wall.json
+66800d73b3672c5ca3db67e040df7afbcee4c083 data/enhancedvanillamod/loot_tables/blocks/pulverizer_block.json
 1f0286f7751de308ec2059dedb10853dcd777bf4 data/enhancedvanillamod/loot_tables/blocks/purple_concrete_button.json
 392fea98a86b0b7695e29d2108a8b129211caefe data/enhancedvanillamod/loot_tables/blocks/purple_concrete_door.json
 87576e311b62946af0c9ed4f494721fc07176856 data/enhancedvanillamod/loot_tables/blocks/purple_concrete_fence.json

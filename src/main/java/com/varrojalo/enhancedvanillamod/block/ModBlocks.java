@@ -2,13 +2,18 @@ package com.varrojalo.enhancedvanillamod.block;
 
 import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
 import com.varrojalo.enhancedvanillamod.block.custom.ClockBlock;
+import com.varrojalo.enhancedvanillamod.block.custom.FilteredHopperBlock;
+import com.varrojalo.enhancedvanillamod.block.custom.PulverizerBlock;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
+import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
@@ -25,9 +30,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> CLOCK_BLOCK = registerBlock("clock_block",
             () -> new ClockBlock(BlockBehaviour.Properties.copy(Blocks.REDSTONE_BLOCK)));
     public static final RegistryObject<Block> FILTERED_HOPPER = registerBlock("filtered_hopper",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.HOPPER)));
+            () -> new FilteredHopperBlock(BlockBehaviour.Properties.copy(Blocks.HOPPER)));
+    public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer_block",
+            () -> new PulverizerBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON).noOcclusion()));
 
-
+    //<editor-fold desc="Concrete Decoration Blocks"
     //<editor-fold desc="White Concrete Decoration Blocks">
     //Stairs, Slab
     public static final RegistryObject<Block> WHITE_CONCRETE_STAIRS = registerBlock("white_concrete_stairs",
@@ -500,7 +507,7 @@ public class ModBlocks {
             () -> new TrapDoorBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_CONCRETE).noOcclusion(), BlockSetType.STONE));
 
     //</editor-fold>
-
+    //</editor-fold>
     public static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block){
         RegistryObject<T> returnedBlock = BLOCKS.register(name, block);
         registerBlockItem(name, returnedBlock);

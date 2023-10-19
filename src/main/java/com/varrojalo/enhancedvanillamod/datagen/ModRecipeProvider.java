@@ -13,6 +13,7 @@ import net.minecraft.world.item.crafting.AbstractCookingRecipe;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.level.ItemLike;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.List;
@@ -21,6 +22,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     public static final List<ItemLike> FIRE_BRICk_BLASTABLES = List.of(Items.BRICK);
     public static final List<ItemLike> FIRE_BRICK_SMELTABLES = List.of(Items.NETHER_BRICK);
+
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
     }
@@ -47,6 +49,20 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput pWriter) {
         oreBlasting(pWriter,FIRE_BRICk_BLASTABLES,RecipeCategory.MISC,ModItems.FIRE_BRICK.get(),0.2F,100,"fire_brick");
         oreSmelting(pWriter,FIRE_BRICK_SMELTABLES,RecipeCategory.MISC,ModItems.FIRE_BRICK.get(),0.6F,200, "fire_brick");
+
+        oreSmelting(pWriter,List.of(ModItems.ECHO_DUST.get()),RecipeCategory.MISC,ModItems.ECHO_INGOT.get(), 1F, 300,"echo_items");
+        oreBlasting(pWriter,List.of(ModItems.ECHO_DUST.get()),RecipeCategory.MISC,ModItems.ECHO_INGOT.get(), 0.8F, 150,"echo_items");
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModItems.TELEPORTER.get())
+                .pattern(" I ")
+                .pattern("IEI")
+                .pattern(" I ")
+                .define('E',Items.ENDER_PEARL)
+                .define('I',ModItems.ECHO_INGOT.get())
+                .unlockedBy(getHasName(Items.ENDER_PEARL),has(Items.ENDER_PEARL))
+                .unlockedBy(getHasName(ModItems.ECHO_INGOT.get()),has(ModItems.ECHO_INGOT.get()))
+                .save(pWriter);
+
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.CLOCK_BLOCK.get())
                 .pattern("$%$")
@@ -79,6 +95,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(Items.IRON_INGOT),has(Items.IRON_INGOT))
                 .unlockedBy(getHasName(Items.IRON_NUGGET),has(Items.IRON_NUGGET))
                 .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.PULVERIZER_BLOCK.get())
+                .pattern("B B")
+                .pattern("CSC")
+                .pattern("CRC")
+                .define('B', Blocks.BLACKSTONE)
+                .define('C', Items.COPPER_INGOT)
+                .define('S', Blocks.SMOOTH_STONE_SLAB)
+                .define('R', Items.REDSTONE)
+                .unlockedBy(getHasName(Items.COPPER_INGOT),has(Items.COPPER_INGOT))
+                .unlockedBy(getHasName(Items.REDSTONE),has(Items.REDSTONE))
+                .unlockedBy(getHasName(Blocks.BLACKSTONE),has(Blocks.BLACKSTONE))
+                .unlockedBy(getHasName(Blocks.SMOOTH_STONE_SLAB),has(Blocks.SMOOTH_STONE_SLAB))
+                .save(pWriter);
+
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC,ModBlocks.FILTERED_HOPPER.get())
                 .requires(Items.HOPPER)
                 .requires(ModItems.FILTER.get())

@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.8,
+  "group": "echo_items",
+  "ingredient": {
+    "item": "enhancedvanillamod:echo_dust"
+  },
+  "result": "enhancedvanillamod:echo_ingot"
+}
