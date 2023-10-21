@@ -2,10 +2,13 @@ package com.varrojalo.enhancedvanillamod.block.custom;
 
 import com.varrojalo.enhancedvanillamod.block.entity.ModBlocksEntities;
 import com.varrojalo.enhancedvanillamod.block.entity.PulverizerBlockEntity;
+import com.varrojalo.enhancedvanillamod.screen.ModMenuTypes;
+import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockMenu;
 import com.varrojalo.enhancedvanillamod.util.ModTags;
 import net.minecraft.Util;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
@@ -13,6 +16,7 @@ import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
+import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -63,6 +67,7 @@ public class PulverizerBlock extends BaseEntityBlock {
         super(pProperties);
     }
 
+
     protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
         BlockEntity blockentity = pLevel.getBlockEntity(pPos);
         if (blockentity instanceof PulverizerBlockEntity) {
@@ -78,8 +83,7 @@ public class PulverizerBlock extends BaseEntityBlock {
             {
                 //Only works in 1.20.1 and bellow
                 //NetworkHooks.openScreen(((ServerPlayer)pPlayer),(PulverizerBlockEntity)entity,pPos);
-                openContainer(pLevel,pPos,pPlayer);
-
+                pPlayer.openMenu((MenuProvider) entity);
             }
             else
             {
