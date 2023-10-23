@@ -20,8 +20,6 @@ public class PulverizerBlockScreen extends AbstractContainerScreen<PulverizerBlo
     @Override
     protected void init() {
         super.init();
-        this.inventoryLabelY = 10000;
-        this.titleLabelY = 10000;
     }
 
     @Override
@@ -40,14 +38,14 @@ public class PulverizerBlockScreen extends AbstractContainerScreen<PulverizerBlo
     private void renderProgressArrow(GuiGraphics pGuiGraphics, int x, int y) {
 
         if(menu.isCrafting()){
-            pGuiGraphics.blit(TEXTURE,x + 85,y + 30,176,0,8,menu.getScaledProgress());
+            pGuiGraphics.blit(TEXTURE,x + 81,y + 35,176,0,14,menu.getScaledProgress());
         }
 
     }
 
     @Override
     public void render(GuiGraphics pGuiGraphics, int pMouseX, int pMouseY, float pPartialTick) {
-        renderBackground(pGuiGraphics,pMouseX,pMouseY,pPartialTick);
+        this.renderBackground(pGuiGraphics);
         super.render(pGuiGraphics, pMouseX, pMouseY, pPartialTick);
         renderTooltip(pGuiGraphics,pMouseX,pMouseY);
     }

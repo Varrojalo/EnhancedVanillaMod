@@ -16,7 +16,7 @@ public class ModMenuTypes {
 
 
     public static final RegistryObject<MenuType<PulverizerBlockMenu>> PULVERIZER_BLOCK_MENU =
-            registerMenuTypes("pulverizer_block_menu",PulverizerBlockMenu::new);
+            registerMenuTypes("pulverizer_block_menu", PulverizerBlockMenu::new);
 
 
     public static void register(IEventBus eventBus){

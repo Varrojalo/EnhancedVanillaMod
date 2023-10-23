@@ -2,48 +2,39 @@ package com.varrojalo.enhancedvanillamod.block.custom;
 
 import com.varrojalo.enhancedvanillamod.block.entity.ModBlocksEntities;
 import com.varrojalo.enhancedvanillamod.block.entity.PulverizerBlockEntity;
-import com.varrojalo.enhancedvanillamod.screen.ModMenuTypes;
 import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockMenu;
 import com.varrojalo.enhancedvanillamod.util.ModTags;
 import net.minecraft.Util;
-import net.minecraft.client.resources.language.I18n;
+import net.minecraft.client.gui.screens.inventory.BrewingStandScreen;
+import net.minecraft.client.gui.screens.inventory.GrindstoneScreen;
 import net.minecraft.core.BlockPos;
-import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
-import net.minecraft.tags.TagKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleMenuProvider;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.BlockItem;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.inventory.AnvilMenu;
+import net.minecraft.world.inventory.BrewingStandMenu;
+import net.minecraft.world.inventory.GrindstoneMenu;
+import net.minecraft.world.inventory.MenuType;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntity;
-import net.minecraft.world.level.block.entity.BlockEntityTicker;
-import net.minecraft.world.level.block.entity.BlockEntityType;
-import net.minecraft.world.level.block.entity.FurnaceBlockEntity;
+import net.minecraft.world.level.block.entity.*;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import net.minecraftforge.common.Tags;
-import net.minecraftforge.network.NetworkContext;
-import net.minecraftforge.network.NetworkDirection;
+import net.minecraftforge.common.ForgeHooks;
+import net.minecraftforge.network.NetworkHooks;
 import org.jetbrains.annotations.Nullable;
 
 public class PulverizerBlock extends BaseEntityBlock {
-
-    public static final int WAITING_TIME = 200;
-    private boolean isProcessing = false;
-
     private static final VoxelShape OUTER_SHAPE = Shapes.block();
     private static final VoxelShape[] SHAPES = Util.make(new VoxelShape[9], (p_51967_) -> {
         for(int i = 0; i < 8; ++i) {
@@ -77,13 +68,12 @@ public class PulverizerBlock extends BaseEntityBlock {
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
-        if (!pLevel.isClientSide()) {
+       if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof PulverizerBlockEntity)
             {
-                //Only works in 1.20.1 and bellow
-                //NetworkHooks.openScreen(((ServerPlayer)pPlayer),(PulverizerBlockEntity)entity,pPos);
-                pPlayer.openMenu((MenuProvider) entity);
+                //pPlayer.openMenu((PulverizerBlockEntity) entity);
+                NetworkHooks.openScreen(((ServerPlayer) pPlayer),(PulverizerBlockEntity)entity,pPos);
             }
             else
             {
@@ -91,6 +81,7 @@ public class PulverizerBlock extends BaseEntityBlock {
             }
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
+
     }
 
 
@@ -120,9 +111,14 @@ public class PulverizerBlock extends BaseEntityBlock {
             return null;
         }
 
-
         return createTickerHelper(pBlockEntityType, ModBlocksEntities.PULVERIZER_BE.get(),
                 (pLevel1, pPos, pState1, pBlockEntity) -> pBlockEntity.tick(pLevel1, pPos, pState1));
+    }
+
+    @Override
+    public MenuProvider getMenuProvider(BlockState pState, Level pLevel, BlockPos pPos) {
+        return new SimpleMenuProvider((pContainerId, pPlayerInventory, pPlayer) -> new PulverizerBlockMenu(pContainerId,pPlayerInventory,pPos),
+                Component.translatable("menu.title.enhancedvanillamod.pulverizer_block_menu"));
     }
 
     @Nullable

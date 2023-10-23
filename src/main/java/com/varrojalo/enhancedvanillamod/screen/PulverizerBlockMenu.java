@@ -2,6 +2,7 @@ package com.varrojalo.enhancedvanillamod.screen;
 
 import com.varrojalo.enhancedvanillamod.block.ModBlocks;
 import com.varrojalo.enhancedvanillamod.block.entity.PulverizerBlockEntity;
+import net.minecraft.core.BlockPos;
 import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
@@ -12,6 +13,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
 import net.minecraftforge.items.SlotItemHandler;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 public class PulverizerBlockMenu extends AbstractContainerMenu {
@@ -20,6 +22,10 @@ public class PulverizerBlockMenu extends AbstractContainerMenu {
     private final Level level;
     private final ContainerData data;
 
+    public PulverizerBlockMenu(int pContainerId, Inventory pInventory, BlockPos pBlockPos)
+    {
+        this(pContainerId, pInventory,pInventory.player.level().getBlockEntity(pBlockPos),new SimpleContainerData(2));
+    }
     public PulverizerBlockMenu(int pContainerId, Inventory pInventory, FriendlyByteBuf pExtraData)
     {
         this(pContainerId, pInventory, pInventory.player.level().getBlockEntity(pExtraData.readBlockPos()),
@@ -38,8 +44,8 @@ public class PulverizerBlockMenu extends AbstractContainerMenu {
         addPlayerHotbar(pInventory);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler,0,80,11));
-            this.addSlot(new SlotItemHandler(iItemHandler,1,80,59));
+            this.addSlot(new SlotItemHandler(iItemHandler,0,80,17));
+            this.addSlot(new SlotItemHandler(iItemHandler,1,80,53));
         });
         addDataSlots(data);
     }
@@ -51,7 +57,7 @@ public class PulverizerBlockMenu extends AbstractContainerMenu {
     public  int getScaledProgress(){
         int progress = this.data.get(0);
         int maxProgress = this.data.get(1);
-        int progressArrowSize = 26;
+        int progressArrowSize = 15;
 
         return  maxProgress != 0 && progress != 0 ? progress * progressArrowSize / maxProgress : 0;
     }

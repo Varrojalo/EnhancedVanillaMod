@@ -31,7 +31,32 @@ import org.jetbrains.annotations.Nullable;
 public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 
     public final ItemStackHandler itemStackHandler = new ItemStackHandler(2);
+    private final ContainerData data = new ContainerData() {
+        @Override
+        public int get(int pIndex) {
+            switch (pIndex){
+                case 0:
+                    return PulverizerBlockEntity.this.progress;
+                case 1:
+                    return PulverizerBlockEntity.this.maxProgress;
+                default:
+                    return 0;
+            }
+        }
 
+        @Override
+        public void set(int pIndex, int pValue) {
+            switch (pIndex){
+                case 0 -> PulverizerBlockEntity.this.progress = pValue;
+                case 1 -> PulverizerBlockEntity.this.maxProgress = pValue;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 2;
+        }
+    };;
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
 
@@ -39,32 +64,9 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 
     public PulverizerBlockEntity(BlockPos pPos, BlockState pBlockState) {
         super(ModBlocksEntities.PULVERIZER_BE.get(), pPos, pBlockState);
-        this.data = new ContainerData() {
-            @Override
-            public int get(int pIndex) {
-                return switch (pIndex){
-                    case 0 -> PulverizerBlockEntity.this.progress;
-                    case 1 -> PulverizerBlockEntity.this.maxProgress;
-                    default -> 0;
-                };
-            }
-
-            @Override
-            public void set(int pIndex, int pValue) {
-                switch (pIndex){
-                    case 0 -> PulverizerBlockEntity.this.progress = pValue;
-                    case 1 -> PulverizerBlockEntity.this.maxProgress = pValue;
-                }
-            }
-
-            @Override
-            public int getCount() {
-                return 2;
-            }
-        };
     }
 
-    protected final ContainerData data;
+
     private int progress = 0;
     private int maxProgress = 78;
 
@@ -103,9 +105,9 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
         return Component.translatable("block.enhancedvanillamod.pulverizer_block");
     }
 
-    @Nullable
+
     @Override
-    public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory, Player pPlayer) {
+    public AbstractContainerMenu createMenu(int pContainerId, Inventory pPlayerInventory,  Player pPlayer) {
         return new PulverizerBlockMenu(pContainerId,pPlayerInventory,this,this.data);
     }
 
