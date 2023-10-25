@@ -1,0 +1,12 @@
+{
+  "type": "enhancedvanillamod:pulverizing",
+  "ingredients": [
+    {
+      "item": "minecraft:cobblestone"
+    }
+  ],
+  "output": {
+    "count": 1,
+    "item": "minecraft:sand"
+  }
+}

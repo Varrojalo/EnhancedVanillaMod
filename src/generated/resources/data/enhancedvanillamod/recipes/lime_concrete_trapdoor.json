@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "enhancedvanillamod:lime_concrete_slab"
+    }
+  },
+  "pattern": [
+    "   ",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:lime_concrete_trapdoor"
+  },
+  "show_notification": true
+}

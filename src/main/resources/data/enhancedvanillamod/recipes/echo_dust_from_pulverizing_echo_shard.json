@@ -1,0 +1,12 @@
+{
+  "type": "enhancedvanillamod:pulverizing",
+  "ingredients": [
+    {
+      "item": "minecraft:echo_shard"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "enhancedvanillamod:echo_dust"
+  }
+}

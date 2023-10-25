@@ -46,10 +46,10 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_redstone",
       "has_copper_block",
-      "has_clock"
+      "has_clock",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

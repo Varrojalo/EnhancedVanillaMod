@@ -1,0 +1,12 @@
+{
+  "type": "enhancedvanillamod:pulverizing",
+  "ingredients": [
+    {
+      "item": "minecraft:quartz_block"
+    }
+  ],
+  "output": {
+    "count": 2,
+    "item": "minecraft:gravel"
+  }
+}

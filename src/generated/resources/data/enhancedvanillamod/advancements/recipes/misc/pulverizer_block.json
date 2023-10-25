@@ -58,11 +58,11 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_copper_ingot",
       "has_redstone",
       "has_blackstone",
-      "has_smooth_stone_slab"
+      "has_smooth_stone_slab",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

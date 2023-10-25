@@ -34,9 +34,9 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_ender_pearl",
-      "has_echo_ingot"
+      "has_echo_ingot",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

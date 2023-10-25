@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "enhancedvanillamod:magenta_concrete_slab"
+    }
+  },
+  "pattern": [
+    "   ",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:magenta_concrete_trapdoor"
+  },
+  "show_notification": true
+}

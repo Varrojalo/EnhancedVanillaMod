@@ -1,11 +1,18 @@
 package com.varrojalo.enhancedvanillamod.block.entity;
 
 import com.varrojalo.enhancedvanillamod.item.ModItems;
+import com.varrojalo.enhancedvanillamod.recipe.PulverizerBlockRecipe;
 import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.Tag;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.protocol.Packet;
+import net.minecraft.network.protocol.game.ClientGamePacketListener;
+import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.TagKey;
 import net.minecraft.world.Containers;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.SimpleContainer;
@@ -13,24 +20,40 @@ import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ForgeCapabilities;
+import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 
-    public final ItemStackHandler itemStackHandler = new ItemStackHandler(2);
+    public final ItemStackHandler itemStackHandler = new ItemStackHandler(2){
+        @Override
+        protected void onContentsChanged(int slot) {
+            setChanged();
+            if (!level.isClientSide()){
+                level.sendBlockUpdated(getBlockPos(),getBlockState(),getBlockState(),3);
+            }
+        }
+    };
     private final ContainerData data = new ContainerData() {
         @Override
         public int get(int pIndex) {
@@ -69,6 +92,37 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 
     private int progress = 0;
     private int maxProgress = 78;
+
+    public ItemStack getRenderStack(){
+
+        if(itemStackHandler.getStackInSlot(INPUT_SLOT).isEmpty() && itemStackHandler.getStackInSlot(OUTPUT_SLOT).isEmpty())
+        {
+            return itemStackHandler.getStackInSlot(OUTPUT_SLOT);
+        }
+        else
+        {
+            if(itemStackHandler.getStackInSlot(INPUT_SLOT).isEmpty())
+            {
+                if(Block.byItem(itemStackHandler.getStackInSlot(OUTPUT_SLOT).getItem()) != Blocks.AIR)
+                {
+                    return itemStackHandler.getStackInSlot(OUTPUT_SLOT);
+                }
+                else {
+                    return new ItemStack(Items.BLACKSTONE);
+                }
+            }
+            else {
+                if(Block.byItem(itemStackHandler.getStackInSlot(INPUT_SLOT).getItem()) != Blocks.AIR)
+                {
+                    return itemStackHandler.getStackInSlot(INPUT_SLOT);
+                }
+                else {
+                    return new ItemStack(Items.BLACKSTONE);
+                }
+
+            }
+        }
+    }
 
     @Override
     public @NotNull <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
@@ -145,9 +199,10 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
         progress = 0;
     }
 
-    //TODO: It is hardcoded it must work with recipes.
     private void craftItem() {
-        ItemStack result = new ItemStack(ModItems.ECHO_DUST.get(),2);
+        Optional<PulverizerBlockRecipe> recipe = getCurrentRecipe();
+
+        ItemStack result = recipe.get().getResultItem(null);
         this.itemStackHandler.extractItem(INPUT_SLOT,1,false);
         this.itemStackHandler.setStackInSlot(OUTPUT_SLOT,new ItemStack(result.getItem(),
                 this.itemStackHandler.getStackInSlot(OUTPUT_SLOT).getCount() + result.getCount()));
@@ -162,13 +217,24 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
         progress++;
     }
 
-    //TODO: It is also hardcoded it must work with recipes.
     private boolean hasRecipe() {
-        boolean hasCraftingItem = this.itemStackHandler.getStackInSlot(INPUT_SLOT).getItem() == Items.ECHO_SHARD;
+        Optional<PulverizerBlockRecipe> recipe = getCurrentRecipe();
 
-        ItemStack result = new ItemStack(ModItems.ECHO_DUST.get());
+        if (recipe.isEmpty()){
+            return false;
+        }
+        ItemStack result = recipe.get().getResultItem(null);
 
-        return  hasCraftingItem && canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+        return canInsertAmountIntoOutputSlot(result.getCount()) && canInsertItemIntoOutputSlot(result.getItem());
+    }
+
+    private Optional<PulverizerBlockRecipe> getCurrentRecipe() {
+        SimpleContainer inventory = new SimpleContainer(this.itemStackHandler.getSlots());
+
+        for (int i = 0; i < itemStackHandler.getSlots(); i++) {
+            inventory.setItem(i,this.itemStackHandler.getStackInSlot(i));
+        }
+        return this.level.getRecipeManager().getRecipeFor(PulverizerBlockRecipe.Type.INSTANCE,inventory,level);
     }
 
     private boolean canInsertItemIntoOutputSlot(Item item) {
@@ -180,5 +246,14 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
 
     }
 
+    @Nullable
+    @Override
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
+        return ClientboundBlockEntityDataPacket.create(this);
+    }
 
+    @Override
+    public CompoundTag getUpdateTag() {
+        return saveWithoutMetadata();
+    }
 }

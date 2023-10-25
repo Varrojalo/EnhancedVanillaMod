@@ -5,6 +5,7 @@ import com.varrojalo.enhancedvanillamod.block.ModBlocks;
 import com.varrojalo.enhancedvanillamod.block.entity.ModBlocksEntities;
 import com.varrojalo.enhancedvanillamod.item.ModCreativeModeTabs;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
+import com.varrojalo.enhancedvanillamod.recipe.ModRecipes;
 import com.varrojalo.enhancedvanillamod.screen.ModMenuTypes;
 import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
@@ -39,6 +40,7 @@ public class EnhancedVanillaMod
         ModBlocks.register(modEventBus);
         ModBlocksEntities.register(modEventBus);
         ModMenuTypes.register(modEventBus);
+        ModRecipes.register(modEventBus);
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);

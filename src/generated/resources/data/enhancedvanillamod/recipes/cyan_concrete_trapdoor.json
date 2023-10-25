@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "enhancedvanillamod:cyan_concrete_slab"
+    }
+  },
+  "pattern": [
+    "   ",
+    "###",
+    "###"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:cyan_concrete_trapdoor"
+  },
+  "show_notification": true
+}

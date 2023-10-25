@@ -46,10 +46,10 @@
   },
   "requirements": [
     [
-      "has_the_recipe",
       "has_diamond",
       "has_redstone",
-      "has_mesh"
+      "has_mesh",
+      "has_the_recipe"
     ]
   ],
   "rewards": {

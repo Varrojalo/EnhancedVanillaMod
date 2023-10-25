@@ -59,12 +59,6 @@ public class PulverizerBlock extends BaseEntityBlock {
     }
 
 
-    protected void openContainer(Level pLevel, BlockPos pPos, Player pPlayer) {
-        BlockEntity blockentity = pLevel.getBlockEntity(pPos);
-        if (blockentity instanceof PulverizerBlockEntity) {
-            pPlayer.openMenu((MenuProvider)blockentity);
-        }
-    }
 
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
