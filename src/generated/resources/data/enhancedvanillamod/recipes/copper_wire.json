@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "R": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "pattern": [
+    "CRC"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:copper_wire"
+  },
+  "show_notification": true
+}

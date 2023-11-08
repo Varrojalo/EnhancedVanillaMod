@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/orientable_vertical",
+  "textures": {
+    "front": "enhancedvanillamod:block/placer_front_vertical",
+    "side": "enhancedvanillamod:block/placer_top"
+  }
+}

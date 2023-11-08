@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "minecraft:copper_ingot"
+    },
+    "F": {
+      "item": "enhancedvanillamod:filter"
+    }
+  },
+  "pattern": [
+    "CCC",
+    "CFC",
+    "CCC"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:copper_filter"
+  },
+  "show_notification": true
+}

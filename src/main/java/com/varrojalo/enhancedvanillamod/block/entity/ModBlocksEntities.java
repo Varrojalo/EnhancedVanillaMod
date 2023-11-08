@@ -19,6 +19,16 @@ public class ModBlocksEntities {
                     BlockEntityType.Builder.of(PulverizerBlockEntity::new,
                             ModBlocks.PULVERIZER_BLOCK.get()).build(null));
 
+    public static final RegistryObject<BlockEntityType<ClockBlockEntity>> CLOCK_BLOCK_BE =
+            BLOCK_ENTITIES.register("clock_block_be",() ->
+                    BlockEntityType.Builder.of(ClockBlockEntity::new,
+                            ModBlocks.CLOCK_BLOCK.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<PlacerBlockEntity>> PLACER_BLOCK_BE =
+            BLOCK_ENTITIES.register("placer_block_be", () ->
+                    BlockEntityType.Builder.of(PlacerBlockEntity::new,
+                            ModBlocks.PLACER_BLOCK.get()).build(null));
+
     public static void register(IEventBus eventBus){
         BLOCK_ENTITIES.register(eventBus);
     }

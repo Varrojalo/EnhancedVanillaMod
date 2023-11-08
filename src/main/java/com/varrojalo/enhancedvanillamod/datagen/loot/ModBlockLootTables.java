@@ -29,7 +29,16 @@ public class ModBlockLootTables extends BlockLootSubProvider
         this.dropSelf(ModBlocks.CLOCK_BLOCK.get());
         this.dropSelf(ModBlocks.FILTERED_HOPPER.get());
         this.dropSelf(ModBlocks.PULVERIZER_BLOCK.get());
+        this.dropSelf(ModBlocks.ECHO_BLOCK.get());
 
+        this.dropSelf(ModBlocks.PLACER_BLOCK.get());
+        this.dropSelf(ModBlocks.BREAKER_BLOCK.get());
+
+        this.dropSelf(ModBlocks.COPPER_FILTER.get());
+        this.dropSelf(ModBlocks.DIAMOND_FILTER.get());
+        this.dropSelf(ModBlocks.NETHERITE_FILTER.get());
+
+        this.dropSelf(ModBlocks.COPPER_WIRE.get());
 
         //<editor-fold desc="White Concrete Deco Blocks Loot Tables">
         this.dropSelf(ModBlocks.WHITE_CONCRETE_STAIRS.get());

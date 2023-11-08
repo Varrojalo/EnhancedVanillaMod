@@ -7,6 +7,8 @@ import com.varrojalo.enhancedvanillamod.item.ModCreativeModeTabs;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
 import com.varrojalo.enhancedvanillamod.recipe.ModRecipes;
 import com.varrojalo.enhancedvanillamod.screen.ModMenuTypes;
+import com.varrojalo.enhancedvanillamod.screen.PlacerBlockMenu;
+import com.varrojalo.enhancedvanillamod.screen.PlacerBlockScreen;
 import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockScreen;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -81,6 +83,7 @@ public class EnhancedVanillaMod
         {
 
             MenuScreens.register(ModMenuTypes.PULVERIZER_BLOCK_MENU.get(), PulverizerBlockScreen::new);
+            MenuScreens.register(ModMenuTypes.PLACER_BLOCK_MENU.get(), PlacerBlockScreen::new);
         }
     }
 }

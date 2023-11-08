@@ -6,6 +6,7 @@ import com.varrojalo.enhancedvanillamod.item.ModItems;
 import mezz.jei.api.recipe.RecipeType;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
+import net.minecraft.data.recipes.packs.VanillaRecipeProvider;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Items;
@@ -106,6 +107,44 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModItems.FILTER.get()),has(ModItems.FILTER.get()))
                 .unlockedBy(getHasName(Items.HOPPER),has(Items.HOPPER))
                 .save(pWriter);
+
+        nineBlockStorageRecipes(pWriter,RecipeCategory.MISC,ModItems.ECHO_INGOT.get(),RecipeCategory.BUILDING_BLOCKS,ModBlocks.ECHO_BLOCK.get());
+        ShapedRecipeBuilder.shaped(RecipeCategory.REDSTONE,ModBlocks.COPPER_WIRE.get())
+                .pattern("CRC")
+                .define('C', Items.COPPER_INGOT)
+                .define('R', Items.REDSTONE)
+                .unlockedBy(getHasName(Items.COPPER_INGOT),has(Items.COPPER_INGOT))
+                .unlockedBy(getHasName(Items.REDSTONE),has(Items.REDSTONE))
+                .save(pWriter);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.COPPER_FILTER.get())
+                .pattern("CCC")
+                .pattern("CFC")
+                .pattern("CCC")
+                .define('C', Items.COPPER_INGOT)
+                .define('F', ModItems.FILTER.get())
+                .unlockedBy(getHasName(Items.COPPER_INGOT),has(Items.COPPER_INGOT))
+                .unlockedBy(getHasName(ModItems.FILTER.get()),has(ModItems.FILTER.get()))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.DIAMOND_FILTER.get())
+                .pattern("DDD")
+                .pattern("DCD")
+                .pattern("DDD")
+                .define('C', ModBlocks.COPPER_FILTER.get())
+                .define('D', Items.DIAMOND)
+                .unlockedBy(getHasName(ModBlocks.COPPER_FILTER.get()),has(ModBlocks.COPPER_FILTER.get()))
+                .unlockedBy(getHasName(Items.DIAMOND),has(Items.DIAMOND))
+                .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.NETHERITE_FILTER.get())
+                .pattern("NNN")
+                .pattern("NDN")
+                .pattern("NNN")
+                .define('D', ModBlocks.DIAMOND_FILTER.get())
+                .define('N', Items.NETHERITE_INGOT)
+                .unlockedBy(getHasName(ModBlocks.DIAMOND_FILTER.get()),has(ModBlocks.DIAMOND_FILTER.get()))
+                .unlockedBy(getHasName(Items.NETHERITE_INGOT),has(Items.NETHERITE_INGOT))
+                .save(pWriter);
+
 
 
         advanceColorConcreteCrafting("white",pWriter);
@@ -252,15 +291,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         concreteFenceGateCrafting(RecipeCategory.DECORATIONS, pBlock, pFenceGate,pWriter);
     }
 
-    private void colorCutting(String color, Block pBlock, ItemLike pStair, ItemLike pSlab, ItemLike pWall,ItemLike pPressurePlate, Consumer<FinishedRecipe> pWriter){
-        stoneCutting(color, "stairs",pBlock,pStair,1,pWriter);
-        stairBuilder(pStair,Ingredient.of(pBlock));
-        stoneCutting(color, "stairs",pBlock,pSlab,2,pWriter);
-        slabBuilder(RecipeCategory.DECORATIONS,pSlab,Ingredient.of(pBlock));
-        stoneCutting(color, "stairs",pBlock,pWall,1,pWriter);
-        wallBuilder(RecipeCategory.DECORATIONS,pWall,Ingredient.of(pBlock));
-        pressurePlateBuilder(RecipeCategory.DECORATIONS,pPressurePlate,Ingredient.of(pBlock));
-    }
     public static Block getBaseConcrete(String color) {
         return ForgeRegistries.BLOCKS.getEntries()
                 .stream()
@@ -276,24 +306,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .findAny()
                 .map(Map.Entry::getValue)
                 .orElseThrow(() -> new IllegalStateException("Failed to find concrete with color: " + color + "_" + suffix));
-    }
-    private void concreteCutting(Consumer<FinishedRecipe> pWriter){
-        colorCutting("white",Blocks.WHITE_CONCRETE,ModBlocks.WHITE_CONCRETE_STAIRS.get(),ModBlocks.WHITE_CONCRETE_SLAB.get(),ModBlocks.WHITE_CONCRETE_WALL.get(),ModBlocks.WHITE_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("orange",Blocks.ORANGE_CONCRETE,ModBlocks.ORANGE_CONCRETE_STAIRS.get(),ModBlocks.ORANGE_CONCRETE_SLAB.get(),ModBlocks.ORANGE_CONCRETE_WALL.get(),ModBlocks.ORANGE_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("magenta",Blocks.MAGENTA_CONCRETE,ModBlocks.MAGENTA_CONCRETE_STAIRS.get(),ModBlocks.MAGENTA_CONCRETE_SLAB.get(),ModBlocks.MAGENTA_CONCRETE_WALL.get(),ModBlocks.MAGENTA_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("light_blue",Blocks.LIGHT_BLUE_CONCRETE,ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS.get(),ModBlocks.LIGHT_BLUE_CONCRETE_SLAB.get(),ModBlocks.LIGHT_BLUE_CONCRETE_WALL.get(),ModBlocks.LIGHT_BLUE_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("yellow",Blocks.YELLOW_CONCRETE,ModBlocks.YELLOW_CONCRETE_STAIRS.get(),ModBlocks.YELLOW_CONCRETE_SLAB.get(),ModBlocks.YELLOW_CONCRETE_WALL.get(),ModBlocks.YELLOW_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("lime",Blocks.LIME_CONCRETE,ModBlocks.LIME_CONCRETE_STAIRS.get(),ModBlocks.LIME_CONCRETE_SLAB.get(),ModBlocks.LIME_CONCRETE_WALL.get(),ModBlocks.LIME_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("pink",Blocks.PINK_CONCRETE,ModBlocks.PINK_CONCRETE_STAIRS.get(),ModBlocks.PINK_CONCRETE_SLAB.get(),ModBlocks.PINK_CONCRETE_WALL.get(),ModBlocks.PINK_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("gray",Blocks.GRAY_CONCRETE,ModBlocks.GRAY_CONCRETE_STAIRS.get(),ModBlocks.GRAY_CONCRETE_SLAB.get(),ModBlocks.GRAY_CONCRETE_WALL.get(),ModBlocks.GRAY_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("light_gray",Blocks.LIGHT_GRAY_CONCRETE,ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS.get(),ModBlocks.LIGHT_GRAY_CONCRETE_SLAB.get(),ModBlocks.LIGHT_GRAY_CONCRETE_WALL.get(),ModBlocks.LIGHT_GRAY_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("cyan",Blocks.CYAN_CONCRETE,ModBlocks.CYAN_CONCRETE_STAIRS.get(),ModBlocks.CYAN_CONCRETE_SLAB.get(),ModBlocks.CYAN_CONCRETE_WALL.get(),ModBlocks.CYAN_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("purple",Blocks.PURPLE_CONCRETE,ModBlocks.PURPLE_CONCRETE_STAIRS.get(),ModBlocks.PURPLE_CONCRETE_SLAB.get(),ModBlocks.PURPLE_CONCRETE_WALL.get(),ModBlocks.PURPLE_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("blue",Blocks.BLUE_CONCRETE,ModBlocks.BLUE_CONCRETE_STAIRS.get(),ModBlocks.BLUE_CONCRETE_SLAB.get(),ModBlocks.BLUE_CONCRETE_WALL.get(),ModBlocks.BLUE_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("brown",Blocks.BROWN_CONCRETE,ModBlocks.BROWN_CONCRETE_STAIRS.get(),ModBlocks.BROWN_CONCRETE_SLAB.get(),ModBlocks.BROWN_CONCRETE_WALL.get(),ModBlocks.BROWN_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("green",Blocks.GREEN_CONCRETE,ModBlocks.GREEN_CONCRETE_STAIRS.get(),ModBlocks.GREEN_CONCRETE_SLAB.get(),ModBlocks.GREEN_CONCRETE_WALL.get(),ModBlocks.GREEN_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("red",Blocks.RED_CONCRETE,ModBlocks.RED_CONCRETE_STAIRS.get(),ModBlocks.RED_CONCRETE_SLAB.get(),ModBlocks.RED_CONCRETE_WALL.get(),ModBlocks.RED_CONCRETE_PRESSURE_PLATE.get(),pWriter);
-        colorCutting("black",Blocks.BLACK_CONCRETE,ModBlocks.BLACK_CONCRETE_STAIRS.get(),ModBlocks.BLACK_CONCRETE_SLAB.get(),ModBlocks.BLACK_CONCRETE_WALL.get(),ModBlocks.BLACK_CONCRETE_PRESSURE_PLATE.get(),pWriter);
     }
 
 }

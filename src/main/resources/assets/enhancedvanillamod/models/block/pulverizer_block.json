@@ -7,7 +7,8 @@
 		"5": "enhancedvanillamod:block/pulverizer_front",
 		"6": "enhancedvanillamod:block/smooth_stone",
 		"7": "enhancedvanillamod:block/oak_planks",
-		"inside": "enhancedvanillamod:block/pulverizer_side"
+		"inside": "enhancedvanillamod:block/pulverizer_side",
+		"particle": "enhancedvanillamod:block/pulverizer_side"
 	},
 	"elements": [
 		{

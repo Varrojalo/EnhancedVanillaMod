@@ -2,6 +2,7 @@ package com.varrojalo.enhancedvanillamod.block;
 
 import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
 import com.varrojalo.enhancedvanillamod.block.custom.ClockBlock;
+import com.varrojalo.enhancedvanillamod.block.custom.CopperWire;
 import com.varrojalo.enhancedvanillamod.block.custom.FilteredHopperBlock;
 import com.varrojalo.enhancedvanillamod.block.custom.PulverizerBlock;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
@@ -33,6 +34,26 @@ public class ModBlocks {
             () -> new FilteredHopperBlock(BlockBehaviour.Properties.copy(Blocks.HOPPER)));
     public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer_block",
             () -> new PulverizerBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON).noOcclusion()));
+    public static final RegistryObject<Block> ECHO_BLOCK = registerBlock("echo_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+
+    public static final RegistryObject<Block> PLACER_BLOCK = registerBlock("placer_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DISPENSER).noOcclusion()));
+    public static final RegistryObject<Block> BREAKER_BLOCK = registerBlock("breaker_block",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.DISPENSER).noOcclusion()));
+    public static final RegistryObject<Block> COPPER_FILTER = registerBlock("copper_filter",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE).noOcclusion()));
+    public static final RegistryObject<Block> DIAMOND_FILTER = registerBlock("diamond_filter",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).noOcclusion()));
+    public static final RegistryObject<Block> NETHERITE_FILTER = registerBlock("netherite_filter",
+            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).noOcclusion()));
+
+
+    public static final RegistryObject<Block> COPPER_WIRE = registerBlock("copper_wire",
+            () -> new CopperWire(BlockBehaviour.Properties.copy(Blocks.REDSTONE_WIRE).noOcclusion()));
+
+
+
 
     //<editor-fold desc="Concrete Decoration Blocks"
     //<editor-fold desc="White Concrete Decoration Blocks">

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "enhancedvanillamod:block/clock_block"
+    },
+    "lit=true": {
+      "model": "enhancedvanillamod:block/clock_block_on"
+    }
+  }
+}

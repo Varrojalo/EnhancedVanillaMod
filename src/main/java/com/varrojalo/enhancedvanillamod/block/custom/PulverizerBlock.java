@@ -60,13 +60,13 @@ public class PulverizerBlock extends BaseEntityBlock {
 
 
 
+
     @Override
     public InteractionResult use(BlockState pState, Level pLevel, BlockPos pPos, Player pPlayer, InteractionHand pHand, BlockHitResult pHit) {
        if (!pLevel.isClientSide()) {
             BlockEntity entity = pLevel.getBlockEntity(pPos);
             if(entity instanceof PulverizerBlockEntity)
             {
-                //pPlayer.openMenu((PulverizerBlockEntity) entity);
                 NetworkHooks.openScreen(((ServerPlayer) pPlayer),(PulverizerBlockEntity)entity,pPos);
             }
             else
@@ -76,14 +76,6 @@ public class PulverizerBlock extends BaseEntityBlock {
         }
         return InteractionResult.sidedSuccess(pLevel.isClientSide());
 
-    }
-
-
-
-    public boolean isPulverizableBlock(Block block)
-    {
-        BlockState state = block.defaultBlockState();
-        return state.is(ModTags.Blocks.PULVERIZABLE_BLOCKS);
     }
 
     @Override
@@ -97,6 +89,7 @@ public class PulverizerBlock extends BaseEntityBlock {
         }
         super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
     }
+
 
     @Nullable
     @Override

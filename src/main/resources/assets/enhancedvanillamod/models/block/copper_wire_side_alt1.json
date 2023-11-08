@@ -1,0 +1,6 @@
+{
+    "parent": "enhancedvanillamod:block/copper_wire_side_alt",
+    "textures": {
+        "line": "enhancedvanillamod:block/copper_block"
+    }
+}

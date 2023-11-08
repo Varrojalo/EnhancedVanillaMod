@@ -29,6 +29,15 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModBlocks.CLOCK_BLOCK.get());
                         pOutput.accept(ModBlocks.FILTERED_HOPPER.get());
                         pOutput.accept(ModBlocks.PULVERIZER_BLOCK.get());
+                        pOutput.accept(ModBlocks.ECHO_BLOCK.get());
+
+                        pOutput.accept(ModBlocks.PLACER_BLOCK.get());
+                        pOutput.accept(ModBlocks.BREAKER_BLOCK.get());
+                        pOutput.accept(ModBlocks.COPPER_WIRE.get());
+
+                        pOutput.accept(ModBlocks.COPPER_FILTER.get());
+                        pOutput.accept(ModBlocks.DIAMOND_FILTER.get());
+                        pOutput.accept(ModBlocks.NETHERITE_FILTER.get());
 
                         //<editor-fold desc="Concrete Deco Blocks">
                         pOutput.accept(ModBlocks.WHITE_CONCRETE_STAIRS.get());

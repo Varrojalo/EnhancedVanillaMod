@@ -79,7 +79,7 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
         public int getCount() {
             return 2;
         }
-    };;
+    };
     private static final int INPUT_SLOT = 0;
     private static final int OUTPUT_SLOT = 1;
 
@@ -198,6 +198,8 @@ public class PulverizerBlockEntity extends BlockEntity implements MenuProvider {
     private void resetProgress() {
         progress = 0;
     }
+
+
 
     private void craftItem() {
         Optional<PulverizerBlockRecipe> recipe = getCurrentRecipe();

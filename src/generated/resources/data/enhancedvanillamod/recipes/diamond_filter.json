@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "C": {
+      "item": "enhancedvanillamod:copper_filter"
+    },
+    "D": {
+      "item": "minecraft:diamond"
+    }
+  },
+  "pattern": [
+    "DDD",
+    "DCD",
+    "DDD"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:diamond_filter"
+  },
+  "show_notification": true
+}

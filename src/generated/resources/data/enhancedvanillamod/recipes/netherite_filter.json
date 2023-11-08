@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "D": {
+      "item": "enhancedvanillamod:diamond_filter"
+    },
+    "N": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "pattern": [
+    "NNN",
+    "NDN",
+    "NNN"
+  ],
+  "result": {
+    "item": "enhancedvanillamod:netherite_filter"
+  },
+  "show_notification": true
+}

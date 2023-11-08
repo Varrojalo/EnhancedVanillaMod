@@ -1,6 +1,7 @@
 package com.varrojalo.enhancedvanillamod.screen;
 
 import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
+import com.varrojalo.enhancedvanillamod.block.custom.PlacerBlock;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
 import net.minecraftforge.common.extensions.IForgeMenuType;
@@ -17,6 +18,8 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<PulverizerBlockMenu>> PULVERIZER_BLOCK_MENU =
             registerMenuTypes("pulverizer_block_menu", PulverizerBlockMenu::new);
+    public static final RegistryObject<MenuType<PlacerBlockMenu>> PLACER_BLOCK_MENU =
+            registerMenuTypes("placer_block_menu", PlacerBlockMenu::new);
 
 
     public static void register(IEventBus eventBus){

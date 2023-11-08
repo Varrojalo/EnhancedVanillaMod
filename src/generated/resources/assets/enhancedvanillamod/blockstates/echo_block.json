@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "enhancedvanillamod:block/echo_block"
+    }
+  }
+}
