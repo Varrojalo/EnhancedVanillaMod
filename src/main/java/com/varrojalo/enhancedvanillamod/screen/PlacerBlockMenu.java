@@ -18,34 +18,34 @@ import net.minecraftforge.items.SlotItemHandler;
 public class PlacerBlockMenu extends AbstractContainerMenu {
     public final PlacerBlockEntity blockEntity;
     private final Level level;
-    private final Container placer;
+    private final ContainerData data;
 
     public PlacerBlockMenu(int pContainerId, Inventory pInventory, BlockPos pBlockPos)
     {
-        this(pContainerId, pInventory,pInventory.player.level().getBlockEntity(pBlockPos),new SimpleContainer(1));
+        this(pContainerId, pInventory,pInventory.player.level().getBlockEntity(pBlockPos),new SimpleContainerData(1));
     }
     public PlacerBlockMenu(int pContainerId, Inventory pInventory, FriendlyByteBuf pExtraData)
     {
         this(pContainerId, pInventory, pInventory.player.level().getBlockEntity(pExtraData.readBlockPos()),
-                new SimpleContainer(1));
+                new SimpleContainerData(1));
     }
 
 
-    public PlacerBlockMenu(int pContainerId, Inventory pInventory, BlockEntity pEntity, Container pContainer)
+    public PlacerBlockMenu(int pContainerId, Inventory pInventory, BlockEntity pEntity, ContainerData pData)
     {
         super(ModMenuTypes.PLACER_BLOCK_MENU.get(),pContainerId);
         checkContainerSize(pInventory,1);
         blockEntity = ((PlacerBlockEntity)pEntity);
         this.level = pInventory.player.level();
-        this.placer = pContainer;
-        pContainer.startOpen(pInventory.player);
-
+        this.data = pData;
         addPlayerInventory(pInventory);
         addPlayerHotbar(pInventory);
 
         this.blockEntity.getCapability(ForgeCapabilities.ITEM_HANDLER).ifPresent(iItemHandler -> {
-            this.addSlot(new SlotItemHandler(iItemHandler,0,80,17));
+            this.addSlot(new SlotItemHandler(iItemHandler,0,80,20));
         });
+
+        addDataSlots(data);
     }
 
 

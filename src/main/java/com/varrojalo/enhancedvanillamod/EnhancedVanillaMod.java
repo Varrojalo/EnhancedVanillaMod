@@ -6,10 +6,7 @@ import com.varrojalo.enhancedvanillamod.block.entity.ModBlocksEntities;
 import com.varrojalo.enhancedvanillamod.item.ModCreativeModeTabs;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
 import com.varrojalo.enhancedvanillamod.recipe.ModRecipes;
-import com.varrojalo.enhancedvanillamod.screen.ModMenuTypes;
-import com.varrojalo.enhancedvanillamod.screen.PlacerBlockMenu;
-import com.varrojalo.enhancedvanillamod.screen.PlacerBlockScreen;
-import com.varrojalo.enhancedvanillamod.screen.PulverizerBlockScreen;
+import com.varrojalo.enhancedvanillamod.screen.*;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -84,6 +81,10 @@ public class EnhancedVanillaMod
 
             MenuScreens.register(ModMenuTypes.PULVERIZER_BLOCK_MENU.get(), PulverizerBlockScreen::new);
             MenuScreens.register(ModMenuTypes.PLACER_BLOCK_MENU.get(), PlacerBlockScreen::new);
+            MenuScreens.register(ModMenuTypes.FEEDER_MENU.get(), FeederBlockScreen::new);
+            MenuScreens.register(ModMenuTypes.COPPER_FILTER_MENU.get(), CopperFilterBlockScreen::new);
+            MenuScreens.register(ModMenuTypes.DIAMOND_FILTER_MENU.get(), DiamondFilterBlockScreen::new);
+            MenuScreens.register(ModMenuTypes.NETHERITE_FILTER_MENU.get(), NetheriteFilterBlockScreen::new);
         }
     }
 }

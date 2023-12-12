@@ -1,7 +1,7 @@
 {
   "variants": {
     "facing=down": {
-      "model": "enhancedvanillamod:block/placer_block_vertical ",
+      "model": "enhancedvanillamod:block/placer_block_vertical",
       "x": 180
     },
     "facing=east": {

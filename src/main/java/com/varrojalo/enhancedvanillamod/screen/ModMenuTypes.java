@@ -18,6 +18,14 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<PulverizerBlockMenu>> PULVERIZER_BLOCK_MENU =
             registerMenuTypes("pulverizer_block_menu", PulverizerBlockMenu::new);
+    public static final RegistryObject<MenuType<FeederBlockMenu>> FEEDER_MENU =
+            registerMenuTypes("feeder_menu", FeederBlockMenu::new);
+    public static final RegistryObject<MenuType<CopperFilterBlockMenu>> COPPER_FILTER_MENU =
+            registerMenuTypes("copper_filter_menu", CopperFilterBlockMenu::new);
+    public static final RegistryObject<MenuType<DiamondFilterBlockMenu>> DIAMOND_FILTER_MENU =
+            registerMenuTypes("diamond_filter_menu", DiamondFilterBlockMenu::new);
+    public static final RegistryObject<MenuType<NetheriteFilterBlockMenu>> NETHERITE_FILTER_MENU =
+            registerMenuTypes("netherite_filter_menu", NetheriteFilterBlockMenu::new);
     public static final RegistryObject<MenuType<PlacerBlockMenu>> PLACER_BLOCK_MENU =
             registerMenuTypes("placer_block_menu", PlacerBlockMenu::new);
 

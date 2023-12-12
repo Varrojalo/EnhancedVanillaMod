@@ -32,8 +32,6 @@ public class ModItemModelProvider extends ItemModelProvider {
         simpleItem(ModItems.TELEPORTER);
 
         simplerBlockItem(ModBlocks.ECHO_BLOCK);
-        simplerBlockItem(ModBlocks.PLACER_BLOCK);
-        simplerBlockItem(ModBlocks.BREAKER_BLOCK);
         simplerBlockItem(ModBlocks.COPPER_FILTER);
         simplerBlockItem(ModBlocks.DIAMOND_FILTER);
         simplerBlockItem(ModBlocks.NETHERITE_FILTER);

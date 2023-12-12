@@ -1,0 +1,6 @@
+{
+    "parent": "enhancedvanillamod:block/colorable_insulated_copper_wire_side",
+    "textures": {
+        "line": "enhancedvanillamod:block/copper_block"
+    }
+}

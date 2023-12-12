@@ -144,6 +144,15 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy(getHasName(ModBlocks.DIAMOND_FILTER.get()),has(ModBlocks.DIAMOND_FILTER.get()))
                 .unlockedBy(getHasName(Items.NETHERITE_INGOT),has(Items.NETHERITE_INGOT))
                 .save(pWriter);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC,ModBlocks.FEEDER.get())
+                .pattern("P P")
+                .pattern("PHP")
+                .pattern("PPP")
+                .define('P', Blocks.DARK_OAK_PLANKS)
+                .define('H', Blocks.HAY_BLOCK)
+                .unlockedBy(getHasName(Blocks.DARK_OAK_PLANKS),has(Blocks.DARK_OAK_PLANKS))
+                .unlockedBy(getHasName(Blocks.HAY_BLOCK),has(Blocks.HAY_BLOCK))
+                .save(pWriter);
 
 
 

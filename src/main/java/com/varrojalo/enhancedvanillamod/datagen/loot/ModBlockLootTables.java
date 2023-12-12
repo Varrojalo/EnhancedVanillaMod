@@ -30,6 +30,7 @@ public class ModBlockLootTables extends BlockLootSubProvider
         this.dropSelf(ModBlocks.FILTERED_HOPPER.get());
         this.dropSelf(ModBlocks.PULVERIZER_BLOCK.get());
         this.dropSelf(ModBlocks.ECHO_BLOCK.get());
+        this.dropSelf(ModBlocks.FEEDER.get());
 
         this.dropSelf(ModBlocks.PLACER_BLOCK.get());
         this.dropSelf(ModBlocks.BREAKER_BLOCK.get());
@@ -39,6 +40,8 @@ public class ModBlockLootTables extends BlockLootSubProvider
         this.dropSelf(ModBlocks.NETHERITE_FILTER.get());
 
         this.dropSelf(ModBlocks.COPPER_WIRE.get());
+        this.dropSelf(ModBlocks.INSULATED_COPPER_WIRE.get());
+
 
         //<editor-fold desc="White Concrete Deco Blocks Loot Tables">
         this.dropSelf(ModBlocks.WHITE_CONCRETE_STAIRS.get());

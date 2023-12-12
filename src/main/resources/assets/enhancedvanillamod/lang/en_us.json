@@ -19,11 +19,14 @@
   "block.enhancedvanillamod.placer_block":"Block Placer",
   "block.enhancedvanillamod.breaker_block":"Block Breaker",
   "block.enhancedvanillamod.copper_wire":"Copper Wire",
+  "block.enhancedvanillamod.colorable_insulated_copper_wire":"Insulated Copper Wire",
+  "block.enhancedvanillamod.feeder":"Animal Feeder",
+
   "block.enhancedvanillamod.teleport_anchor_block":"Teleport Anchor",
   "block.enhancedvanillamod.echo_block":"Echo Block",
-  "block.enhancedvanillamod.copper_filter":"Copper Filter Block",
-  "block.enhancedvanillamod.diamond_filter":"Diamond Filter Block",
-  "block.enhancedvanillamod.netherite_filter":"Netherite Filter Block",
+  "block.enhancedvanillamod.copper_filter":"Copper Filter",
+  "block.enhancedvanillamod.diamond_filter":"Diamond Filter",
+  "block.enhancedvanillamod.netherite_filter":"Netherite Filter",
 
 
   "block.enhancedvanillamod.white_concrete_stairs":"White Concrete Stairs",

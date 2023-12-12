@@ -18,13 +18,10 @@ public class ClockBlockEntity extends BlockEntity {
 
     public void tick(Level pLevel, BlockPos pPos, BlockState pState) {
 
-        if(pLevel.isClientSide()){
-            this.timer++;
-
-            System.out.println("Timer: " + this.timer);
-            if(this.timer > 20)
+        if(pLevel.isClientSide())
+        {
+            if(this.timer % 20 == 0)
             {
-
                 ClockBlock clockBlock = (ClockBlock) pState.getBlock();
                 if(clockIsActive())
                 {
@@ -34,23 +31,17 @@ public class ClockBlockEntity extends BlockEntity {
                 else {
                     clockOff(clockBlock);
                 }
-
-                this.timer = 0;
             }
+            this.timer++;
         }
     }
 
     private void switchClockSignal(ClockBlock clockBlock) {
-        clockBlock.isSignalOn = updateClockSignal(clockBlock.isSignalOn);
+        clockBlock.isSignalOn = !clockBlock.isSignalOn;
     }
 
     private void clockOff(ClockBlock clockBlock) {
         clockBlock.isSignalOn = false;
-    }
-
-    public boolean updateClockSignal(boolean prevState){
-
-        return !prevState;
     }
 
     public void toggleClock(){

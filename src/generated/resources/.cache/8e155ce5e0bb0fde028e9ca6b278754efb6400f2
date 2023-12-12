@@ -1,4 +1,4 @@
-// 1.20.1	2023-11-07T19:30:40.6336436	Item Models: enhancedvanillamod
+// 1.20.1	2023-11-14T23:08:53.408733	Item Models: enhancedvanillamod
 62a840b6e73c3739995152d8bf8301ff2b75c8e3 assets/enhancedvanillamod/models/item/black_concrete_button.json
 194e85102433a1d397eb749bab340446473bbf50 assets/enhancedvanillamod/models/item/black_concrete_door.json
 5cf2c27da75997a31226201cb83e1fc644399df9 assets/enhancedvanillamod/models/item/black_concrete_fence.json
@@ -17,7 +17,6 @@ f860a735d95df5f20a8cc0a3bd0542419abaa1a5 assets/enhancedvanillamod/models/item/b
 d7b4640a7dffe22b9461b34a81c2ef22d0e4fc05 assets/enhancedvanillamod/models/item/blue_concrete_stairs.json
 5b0c0f62ef01e3f1f06207a0c288b5a320dd8700 assets/enhancedvanillamod/models/item/blue_concrete_trapdoor.json
 1c939d1766361b988b391333868ec66b22f09682 assets/enhancedvanillamod/models/item/blue_concrete_wall.json
-9060a3b3d4049c99b5bc421ed13994352f77a764 assets/enhancedvanillamod/models/item/breaker_block.json
 0cdb02357b38071e59cc142dd7d1bd03dbf311aa assets/enhancedvanillamod/models/item/brown_concrete_button.json
 d4c8f738290a0378db62b7f9c4a3a9c09fd99da3 assets/enhancedvanillamod/models/item/brown_concrete_door.json
 0628403440a47bf9b12ed06621d0cc74a6e93be1 assets/enhancedvanillamod/models/item/brown_concrete_fence.json
@@ -117,7 +116,6 @@ e99af28dee6ea8937261f5eeae9e20451cb10f14 assets/enhancedvanillamod/models/item/p
 905863c248aee9442b9ca27d89fa3eebc618d77a assets/enhancedvanillamod/models/item/pink_concrete_stairs.json
 0d69e39286c2ad341766e1010d438cdd66991025 assets/enhancedvanillamod/models/item/pink_concrete_trapdoor.json
 a7c6e7a09718f97ce5ffa0f00ff9ee32616cac05 assets/enhancedvanillamod/models/item/pink_concrete_wall.json
-71fa88bdb5b274b1d75fb6b4a115fb1425db0a84 assets/enhancedvanillamod/models/item/placer_block.json
 f0f6c58b0ccef7cac9e22d8d3d9a0374cd8c4b6b assets/enhancedvanillamod/models/item/purple_concrete_button.json
 0b4ba1c96dcefd86e9292bb5030d73a61595f9e5 assets/enhancedvanillamod/models/item/purple_concrete_door.json
 a0a47e5f30d0555eaf37e7ae54fd48282b833e86 assets/enhancedvanillamod/models/item/purple_concrete_fence.json

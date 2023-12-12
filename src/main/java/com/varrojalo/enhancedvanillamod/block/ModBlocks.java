@@ -1,23 +1,15 @@
 package com.varrojalo.enhancedvanillamod.block;
 
 import com.varrojalo.enhancedvanillamod.EnhancedVanillaMod;
-import com.varrojalo.enhancedvanillamod.block.custom.ClockBlock;
-import com.varrojalo.enhancedvanillamod.block.custom.CopperWire;
-import com.varrojalo.enhancedvanillamod.block.custom.FilteredHopperBlock;
-import com.varrojalo.enhancedvanillamod.block.custom.PulverizerBlock;
+import com.varrojalo.enhancedvanillamod.block.custom.*;
 import com.varrojalo.enhancedvanillamod.item.ModItems;
-import net.minecraft.core.BlockPos;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -34,24 +26,28 @@ public class ModBlocks {
             () -> new FilteredHopperBlock(BlockBehaviour.Properties.copy(Blocks.HOPPER)));
     public static final RegistryObject<Block> PULVERIZER_BLOCK = registerBlock("pulverizer_block",
             () -> new PulverizerBlock(BlockBehaviour.Properties.copy(Blocks.CAULDRON).noOcclusion()));
+    public static final RegistryObject<Block> FEEDER = registerBlock("feeder",
+            () -> new FeederBlock(BlockBehaviour.Properties.copy(Blocks.DARK_OAK_PLANKS).noOcclusion()));
     public static final RegistryObject<Block> ECHO_BLOCK = registerBlock("echo_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.NETHERITE_BLOCK)));
+
 
     public static final RegistryObject<Block> PLACER_BLOCK = registerBlock("placer_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DISPENSER).noOcclusion()));
     public static final RegistryObject<Block> BREAKER_BLOCK = registerBlock("breaker_block",
             () -> new Block(BlockBehaviour.Properties.copy(Blocks.DISPENSER).noOcclusion()));
     public static final RegistryObject<Block> COPPER_FILTER = registerBlock("copper_filter",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE).noOcclusion()));
+            () -> new CopperFilterBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE).noOcclusion()));
     public static final RegistryObject<Block> DIAMOND_FILTER = registerBlock("diamond_filter",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).noOcclusion()));
+            () -> new DiamondFilterBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE).noOcclusion()));
     public static final RegistryObject<Block> NETHERITE_FILTER = registerBlock("netherite_filter",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.WHITE_CARPET).noOcclusion()));
+            () -> new NetheriteFilterBlock(BlockBehaviour.Properties.copy(Blocks.WHITE_CONCRETE).noOcclusion()));
 
 
     public static final RegistryObject<Block> COPPER_WIRE = registerBlock("copper_wire",
             () -> new CopperWire(BlockBehaviour.Properties.copy(Blocks.REDSTONE_WIRE).noOcclusion()));
-
+    public static final RegistryObject<Block> INSULATED_COPPER_WIRE = registerBlock("colorable_insulated_copper_wire",
+            () -> new InsulatedCopperWire(BlockBehaviour.Properties.copy(Blocks.REDSTONE_WIRE).noOcclusion()));
 
 
 

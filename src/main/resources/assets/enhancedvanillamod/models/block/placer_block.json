@@ -1,8 +1,23 @@
 {
-  "parent": "minecraft:block/orientable",
-  "textures": {
-    "front": "enhancedvanillamod:block/placer_front",
-    "side": "enhancedvanillamod:block/placer_side",
-    "top": "enhancedvanillamod:block/placer_top"
-  }
+	"parent": "minecraft:block/cube_all",
+	"textures": {
+		"0": "enhancedvanillamod:block/placer_front",
+		"1": "enhancedvanillamod:block/placer_side",
+		"2": "enhancedvanillamod:block/placer_top",
+		"particle": "enhancedvanillamod:block/placer_front"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"east": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"south": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"west": {"uv": [0, 0, 16, 16], "texture": "#1"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#2"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#2"}
+			}
+		}
+	]
 }

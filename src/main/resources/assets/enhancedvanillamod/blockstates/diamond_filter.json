@@ -1,7 +1,19 @@
 {
   "variants": {
-    "": {
+    "facing=north": {
       "model": "enhancedvanillamod:block/diamond_filter"
+    },
+    "facing=south": {
+      "model": "enhancedvanillamod:block/diamond_filter",
+      "y": 180
+    },
+    "facing=east": {
+      "model": "enhancedvanillamod:block/diamond_filter",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "enhancedvanillamod:block/diamond_filter",
+      "y": 270
     }
   }
 }

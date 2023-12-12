@@ -1,0 +1,26 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "enhancedvanillamod:block/breaker_block_vertical ",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "enhancedvanillamod:block/breaker_block",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "enhancedvanillamod:block/breaker_block"
+    },
+    "facing=south": {
+      "model": "enhancedvanillamod:block/breaker_block",
+      "y": 180
+    },
+    "facing=up": {
+      "model": "enhancedvanillamod:block/breaker_block_vertical"
+    },
+    "facing=west": {
+      "model": "enhancedvanillamod:block/breaker_block",
+      "y": 270
+    }
+  }
+}
